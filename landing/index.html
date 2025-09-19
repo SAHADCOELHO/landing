@@ -298,7 +298,7 @@
 
 <script>
     window.AK_CONFIG = {
-      CATALOG_BASE_URL: localStorage.getItem('AK_CATALOG_BASE_URL') || 'http://127.0.0.1:5050',
+      CATALOG_BASE_URL: localStorage.getItem('AK_CATALOG_BASE_URL') || 'https://catalog-4h1h.onrender.com',
       CITY: localStorage.getItem('AK_CITY') || 'Luanda',
       POPUP_MODE: (localStorage.getItem('AK_POPUP_MODE') || 'once').toLowerCase()
     };
@@ -406,7 +406,7 @@
   </script>
 <script>
   (function(){
-    const API  = (window.AK_CONFIG?.CATALOG_BASE_URL || 'http://127.0.0.1:5050').replace(/\/$/, '');
+    const API  = (window.AK_CONFIG?.CATALOG_BASE_URL || 'https://catalog-4h1h.onrender.com').replace(/\/$/, '');
     const CITY = (window.AK_CONFIG?.CITY || 'Luanda');
     async function fetchDisponiveis(){
       try{
