@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produto | Allô Kapri</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="min-h-screen w-full bg-black text-zinc-200">
+  <div class="mx-auto max-w-[1100px] px-4 sm:px-6 md:px-10 py-6">
+    <header class="flex items-center justify-between gap-3 py-2 border-b border-zinc-900/80">
+      <a href="../catalogo.html" class="text-zinc-400 hover:text-zinc-200 text-sm">← Voltar ao catálogo</a>
+      <div class="font-bold text-lg">Allô Kapri</div>
+      <a href="https://wa.wa" target="_blank" class="text-sm text-zinc-400 hover:text-white">WhatsApp</a>
+    </header>
+
+    <main id="productRoot" class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6"></main>
+
+    <footer class="mt-10 text-center text-xs text-zinc-600">
+      © <script>document.write(new Date().getFullYear())</script> Allô Kapri — Produto.
+    </footer>
+  </div>
+
+  <!-- ORDEM IMPORTANTE -->
+
+<script src="../sheets-data.js"></script>
+<script src="produto.js"></script>
+
+<script>
+(async function initProduto(){
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id");
+
+  const titleEl = document.getElementById("p-title") || document.querySelector("h1");
+  const imgMain = document.getElementById("p-image");
+  const storWrap = document.getElementById("p-storages");
+  const priceEl = document.getElementById("p-price");
+  const noteEl = document.getElementById("p-note");
+  const battEl = document.getElementById("p-batt");
+  const incEl = document.getElementById("p-includes");
+  const waBtn = document.getElementById("p-wa");
+
+  let products = [];
+  try { products = await KapriSheet.loadProductsFromSheet(); }
+  catch(e){ console.error(e); }
+
+  const p = products.find(x => x.id === id);
+
+  if (!p) {
+    document.title = "Produto não encontrado | Allô Kapri";
+    titleEl.textContent = "Produto não encontrado";
+    return;
+  }
+
+  document.title = `${p.name} | Allô Kapri`;
+  titleEl.textContent = p.name;
+
+  if (imgMain && p.image) imgMain.src = p.image;
+  if (noteEl) noteEl.textContent = p.note || "Bom estado";
+  if (battEl) battEl.textContent = `≥ ${p.battery_min}% de saúde`;
+
+  // storages com preço dinâmico
+  const mk = (s) => {
+    const v = p.prices[s] || "";
+    const aoa = KapriSheet.formatAOA(v);
+    return `<button class="k-chip" data-s="${s}" data-price="${v}">${s} GB</button>`;
+  };
+  storWrap.innerHTML = p.storages.map(mk).join(" ");
+
+  function setPrice(v){
+    const n = +String(v).replace(/\D/g,"");
+    priceEl.textContent = KapriSheet.formatAOA(n);
+    // WhatsApp com UTM
+    if (waBtn) {
+      const waBase = "https://wa.wa";
+      const href = `${waBase}?text=${encodeURIComponent(`Quero ${p.name}`)}&utm_source=produto&utm_medium=site&utm_campaign=kapri&product=${encodeURIComponent(p.id)}`;
+      waBtn.href = href;
+    }
+  }
+  // seleciona o menor preço padrão
+  const firstPrice = p.storages.map(s => +String(p.prices[s]).replace(/\D/g,"")).filter(Boolean).sort((a,b)=>a-b)[0] || 0;
+  setPrice(firstPrice);
+
+  storWrap.addEventListener("click",(e)=>{
+    const b = e.target.closest("button[data-s]");
+    if (!b) return;
+    storWrap.querySelectorAll(".k-chip--active").forEach(x=>x.classList.remove("k-chip--active"));
+    b.classList.add("k-chip--active");
+    setPrice(b.dataset.price || 0);
+  });
+
+  // itens inclusos
+  incEl.innerHTML = (p.includes || []).map(x=>`<li>• ${x}</li>`).join("");
+})();
+</script>
+
+</body>
+</html>
+
+
+

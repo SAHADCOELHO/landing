@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>allô kapri — Importadora</title>
+
+<meta content="#f96b09" name="theme-color"/>
+
+
+
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Arquivos locais -->
+<script defer="" src="script.js"></script>
+<link href="style.css" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root { --kapri:#f96b09; }
+    html { scroll-behavior:smooth; }
+  </style>
+<!-- Swiper CSS -->
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+<style>
+    .ak-mini{scroll-snap-align:start;min-width:180px;background:#0b1020;border:1px solid rgba(249,107,9,.35);
+      border-radius:14px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+    .ak-mini img{width:86px;height:104px;object-fit:contain;filter:drop-shadow(0 6px 20px rgba(0,0,0,.45))}
+    .ak-mini .mname{color:#e5e7eb;font-weight:700;font-size:13px;text-align:center}
+    .ak-mini .mbadge{margin-top:4px;font-size:10.5px;color:#111827;background:#f96b09;padding:3px 8px;border-radius:999px}
+  </style>
+<style>
+    #ak-buy-overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:1000000;
+      background: rgba(5,7,15,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    #ak-buy-card{ width:min(92vw,460px); background:#0b1020; border:1px solid rgba(249,107,9,.35);
+      border-radius:18px; padding:18px; box-shadow:0 20px 60px rgba(0,0,0,.55) }
+    .ak-buy-title{ margin:0 0 6px; color:#fff; font-weight:900; font-size:18px }
+    .ak-buy-desc{ margin:0 0 12px; color:#cbd5e1; font-size:13px; line-height:1.45 }
+    .ak-buy-actions{ display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; }
+    .ak-btn-wpp{ background:#25D366; color:#0b1020; font-weight:800; border:none; border-radius:12px; padding:10px 14px; cursor:pointer }
+    .ak-btn-sec{ background:#f96b09; color:#0b1020; font-weight:800; border:none; border-radius:12px; padding:10px 14px; cursor:pointer }
+    .ak-btn-ghost{ background:transparent; color:#94a3b8; border:none; cursor:pointer; font-size:12px; }
+    .ak-buy-head{ display:flex; align-items:center; gap:10px; margin-bottom:8px }
+    .ak-buy-head img{ width:42px; height:42px; object-fit:contain; }
+  </style>
+</link><meta content="Consulte a tabela de preços da Allo Kapri. Site em construção — acompanhe novidades e promoções exclusivas." name="description"/><meta content="Allo Kapri — Tabela de Preços" property="og:title"/><meta content="Consulte a tabela de preços. Site em construção — novidades e promoções em breve." property="og:description"/><meta content="assets/images/inspecao-profissional.webp" property="og:image"/><meta content="website" property="og:type"/><meta content="pt_PT" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/></head>
+<body class="min-h-screen w-full bg-black text-zinc-200 selection:bg-[color:var(--kapri)]/30">
+<!-- WRAPPER COM GLOW E BORDA -->
+<div class="relative mx-auto max-w-[1200px] rounded-2xl md:rounded-3xl border border-[color:var(--kapri)]/40 shadow-[0_0_40px_rgba(249,107,9,0.2)] overflow-hidden">
+<!-- AURAS DE FUNDO (dimensionadas por breakpoint) -->
+<div class="pointer-events-none absolute inset-0">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[280px] w-[760px] md:h-[420px] md:w-[1200px] bg-[radial-gradient(ellipse_at_center,rgba(249,107,9,0.35),rgba(0,0,0,0)_60%)] blur-2xl"></div>
+<div class="absolute bottom-0 right-0 h-[220px] w-[360px] md:h-[380px] md:w-[600px] bg-[radial-gradient(ellipse_at_bottom_right,rgba(249,107,9,0.25),rgba(0,0,0,0)_60%)] blur-2xl"></div>
+</div>
+<!-- HERO -->
+<section class="relative px-4 sm:px-6 md:px-14 py-12 sm:py-16 md:py-24 bg-gradient-to-b from-black/60 via-zinc-950 to-black">
+<div class="mx-auto max-w-[940px] text-center">
+<div class="inline-flex items-center gap-2 rounded-full border border-[color:var(--kapri)]/40 bg-zinc-900/60 px-3 sm:px-4 py-1 text-[10px] sm:text-xs tracking-wide backdrop-blur">
+<span class="h-2 w-2 rounded-full bg-[color:var(--kapri)]"></span>
+          allô kapri · Importadora
+        </div>
+<!-- Título fluido com clamp -->
+<h1 class="mt-5 sm:mt-6 font-bold leading-tight text-[clamp(1.9rem,4.6vw,3.5rem)]">
+          Importe <span class="text-white"></span> sem te preocupares com as Divisas e Impostos<br/>
+<span class="signature signature-glow bg-gradient-to-r from-[color:var(--kapri)] to-orange-300 bg-clip-text text-transparent">
+  Confiável, Seguro &amp; em 15 dias.
+</span>
+</h1>
+<p class="mt-4 sm:mt-5 text-zinc-400 text-[15px] sm:text-base md:text-lg">
+          Especializados em logística &amp; importação de produtos Apple novos e recondicionados.
+        </p>
+<p class="mt-4 sm:mt-5 text-zinc-400 text-[15px] sm:text-base md:text-lg">
+          Enviamos para Angola, Brasil &amp; Portugal.
+        </p>
+<div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+<!-- Botão: Catálogo ou Tabela de Preços -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center rounded-2xl bg-[#f96b09] px-6 sm:px-7 py-4 text-base font-semibold text-black shadow-[0_0_30px_rgba(249,107,9,0.45)] hover:brightness-110" href="#" id="link-catalogo">
+  Ver Catálogo ou Tabela de Preços
+</a>
+<!-- Botão: Falar no WhatsApp -->
+<a aria-label="Falar no WhatsApp" class="w-full sm:w-auto inline-flex items-center justify-center rounded-2xl border border-[#f96b09]/60 bg-zinc-900/60 px-6 sm:px-7 py-4 text-base text-zinc-200 hover:bg-zinc-900" href="https://wa.me/244936777484?text=Ol%C3%A1%2C%20vim%20do%20site%20all%C3%B4%20kapri%20e%20gostaria%20de%20falar%20no%20WhatsApp." rel="noopener noreferrer" target="_blank">
+  Falar no WhatsApp
+</a>
+</div>
+<p class="mt-4 text-[12px] sm:text-xs text-zinc-500 px-2">
+          Temos estoque limitado em Angola. Apenas os modelos novos estão disponíveis para entrega no mesmo dia da compra.
+          Os usados (recondicionados) estão disponíveis apenas por encomenda.
+        </p>
+</div>
+</section>
+<!-- TRUST STRIP (4 cards) -->
+<!-- O QUE VOCÊ RECEBE -->
+<section class="px-4 sm:px-6 md:px-14 pb-12 md:pb-16">
+<!-- Produtos disponíveis para entrega rápida (Stock) -->
+<section id="ak-quick" style="margin: 12px auto; max-width: 1180px; padding: 0 16px; display:none;">
+<h2 class="mb-6 sm:mb-8 text-center font-semibold text-[clamp(1.3rem,3.5vw,2rem)]">Stock</h2>
+<div class="ak-rail" id="ak-quick-rail" style="display:flex; gap:12px; overflow:auto; padding-bottom:6px; scroll-snap-type:x mandatory;"></div>
+</section>
+<h2 class="mb-6 sm:mb-8 text-center font-semibold text-[clamp(1.3rem,3.5vw,2rem)]">
+    
+  O que você recebe
+  </h2>
+<div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+<!-- Card 1 -->
+<div class="receive-card">
+<div class="receive-img">
+<img alt="Inspeção Profissional Allô Kapri" decoding="async" loading="lazy" src="assets/images/inspecao-profissional.webp"/>
+</div>
+<div>
+<h3 class="receive-title">Inspeção Profissional</h3>
+<p class="receive-text">
+      Cada iPhone recondicionado passa por testes rigorosos: saúde de bateria acima de 80%, avaliação de tela,
+      estado cosmético e plena funcionalidade. Recebe um dispositivo pronto para uso com transparência total.
+    </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="receive-card">
+<div class="receive-img">
+<img alt="Seguro de Telemóvel" decoding="async" loading="lazy" src="assets/images/seguro-telemovel.webp"/>
+</div>
+<div>
+<h3 class="receive-title">Seguro de Telemóvel</h3>
+<p class="receive-text">
+      Garantia de procedência em todos os produtos e suporte confiável. Você tem segurança extra contra defeitos
+      inesperados, para usar o seu Apple sem preocupações.
+    </p>
+</div>
+</div>
+<!-- Card 3 (Desconto Ango Higiene) -->
+<div class="receive-card md:col-span-2 md:max-w-[70%] md:mx-auto">
+<div class="receive-img">
+<img alt="Desconto Ango Higiene" decoding="async" loading="lazy" src="assets/images/SOFA-2.webp"/>
+</div>
+<div>
+<h3 class="receive-title">Desconto Ango Higiene</h3>
+<p class="receive-text">
+      Se vive em Angola, ganha automaticamente <strong>10% de desconto</strong> na higienização de sofás, cadeiras, cortinas
+      e tapetes com a <strong>Ango Higiene</strong>, empresa parceira da Allô Kapri.
+    </p>
+</div>
+</div>
+</div></section>
+<!-- ESCOLHA COMO QUER COMPRAR -->
+<section class="px-4 sm:px-6 md:px-14 pb-12 md:pb-16 overflow-x-hidden" id="planos">
+<h2 class="section-title">Escolha como quer comprar</h2>
+<div class="mx-auto max-w-5xl grid grid-cols-1 gap-5 md:grid-cols-2">
+<!-- À Vista -->
+<div class="plan-card">
+<div class="plan-inner">
+<h3 class="plan-title">À Vista</h3>
+<p class="plan-sub">
+           (Para itens de entrega imediata)
+        </p>
+<ul class="plan-list">
+<li><span class="check"></span>Entrega no mesmo dia</li>
+<li><span class="check"></span>Pagamento apenas no delivery </li>
+<li><span class="check"></span>Seguro do iPhone</li>
+</ul>
+<a aria-label="Comprar à vista pelo WhatsApp" class="plan-btn-primary" href="https://wa.me/244936777484?text=Ol%C3%A1%2C%20quero%20comprar%20%C3%A0%20vista%20(Entrega%20Imediata)." rel="noopener noreferrer" target="_blank">
+  Quero Comprar à Vista
+</a>
+</div>
+</div>
+<!-- Encomenda 75/25 -->
+<div class="plan-card plan-card--featured">
+<div aria-hidden="true" class="plan-glow"></div>
+<div class="plan-inner">
+<h3 class="plan-title flex items-center gap-2">
+          Encomenda 75/25 
+          <svg class="h-5 w-5 text-[color:var(--kapri)]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2 6.1 15 0.1 9.2l8.2-1.2L12 .6z"></path>
+</svg>
+          🇦🇴
+        </h3>
+<p class="plan-sub">
+          (75% como primeira parcela para encomendar &amp; 25% no Delivery)
+        </p>
+<ul class="plan-list">
+<li><span class="check"></span>Prazo padrão até 15 dias úteis</li>
+<li><span class="check"></span>Cores sob demanda</li>
+<li><span class="check"></span>Seguro do iPhone</li>
+</ul>
+<a aria-label="Fazer encomenda 75/25 pelo WhatsApp" class="plan-btn-outline" href="https://wa.me/244936777484?text=Ol%C3%A1%2C%20quero%20fazer%20uma%20encomenda%2075%2F25%20(75%20agora%20%2B%2025%25%20no%20delivery)." rel="noopener noreferrer" target="_blank">
+  Quero Fazer Encomenda
+</a>
+</div>
+</div>
+</div>
+<p class="mt-5 text-center text-[12px] sm:text-xs text-zinc-500">
+    Se vive no Brasil ou em Portugal saiba que deverá efetuar o pagamento na totalidade por transferência ou no Website com cartão de credito ou débito. Isto porque não possuímos nenhuma sede nestes países.
+  </p>
+</section>
+<!-- ESTEIRA DE FOTOS / CLIENTES FELIZES -->
+<section class="px-4 sm:px-6 md:px-14 pb-12 md:pb-16" id="clientes">
+<h2 class="section-title mb-4 sm:mb-6">🇦🇴 Clientes Felizes Em Angola 🇦🇴</h2>
+<div class="marquee">
+<div class="marquee__mask"></div>
+<div class="marquee__track" id="marqueeTrack">
+<!-- Troque os src pelos seus arquivos -->
+<img alt="Cliente 1" decoding="async" loading="lazy" src="assets/images/Clientes/cli-01.webp"/>
+<img alt="Cliente 2" decoding="async" loading="lazy" src="assets/images/Clientes/cli-02.webp"/>
+<img alt="Cliente 3" decoding="async" loading="lazy" src="assets/images/Clientes/cli-03.webp"/>
+<img alt="Cliente 4" decoding="async" loading="lazy" src="assets/images/Clientes/cli-04.webp"/>
+<img alt="Cliente 5" decoding="async" loading="lazy" src="assets/images/Clientes/cli-05.webp"/>
+<img alt="Cliente 6" decoding="async" loading="lazy" src="assets/images/Clientes/cli-06.webp"/>
+<img alt="Cliente 7" decoding="async" loading="lazy" src="assets/images/Clientes/cli-07.webp"/>
+<img alt="Cliente 8" decoding="async" loading="lazy" src="assets/images/Clientes/cli-08.webp"/>
+<img alt="Cliente 9" decoding="async" loading="lazy" src="assets/images/Clientes/cli-09.webp"/>
+<img alt="Cliente 10" decoding="async" loading="lazy" src="assets/images/Clientes/cli-10.webp"/>
+<img alt="Cliente 11" decoding="async" loading="lazy" src="assets/images/Clientes/cli-11.webp"/>
+<img alt="Cliente 12" decoding="async" loading="lazy" src="assets/images/Clientes/cli-12.webp"/>
+<img alt="Cliente 13" decoding="async" loading="lazy" src="assets/images/Clientes/cli-13.webp"/>
+<img alt="Cliente 14" decoding="async" loading="lazy" src="assets/images/Clientes/cli-14.webp"/>
+<img alt="Cliente 15" decoding="async" loading="lazy" src="assets/images/Clientes/cli-15.webp"/>
+<img alt="Cliente 16" decoding="async" loading="lazy" src="assets/images/Clientes/cli-16.webp"/>
+<img alt="Cliente 17" decoding="async" loading="lazy" src="assets/images/Clientes/cli-17.webp"/>
+<img alt="Cliente 18" decoding="async" loading="lazy" src="assets/images/Clientes/cli-18.webp"/>
+<img alt="Cliente 19" decoding="async" loading="lazy" src="assets/images/Clientes/cli-19.webp"/>
+<img alt="Cliente 20" decoding="async" loading="lazy" src="assets/images/Clientes/cli-20.webp"/>
+<img alt="Cliente 21" decoding="async" loading="lazy" src="assets/images/Clientes/cli-21.webp"/>
+<img alt="Cliente 22" decoding="async" loading="lazy" src="assets/images/Clientes/cli-22.webp"/>
+</div>
+</div>
+</section>
+<!-- CTA FINAL -->
+<section class="px-4 sm:px-6 md:px-14 pb-12 md:pb-16" id="cta">
+<div class="cta-card relative text-center">
+<!-- glow laranja suave -->
+<div aria-hidden="true" class="cta-glow"></div>
+<div class="cta-inner">
+<h3 class="cta-title">Pronto para encomendar o seu ?</h3>
+<p class="cta-sub">
+        Saiba que as nossas condições são claras e prometemos fotos reais da encomenda antes da mesma ser enviada para o destino final
+      </p>
+<div class="mt-6 flex flex-col items-stretch sm:flex-row sm:items-center sm:justify-center gap-3">
+<a aria-label="Quero encomendar agora no WhatsApp" class="btn btn-primary w-full sm:w-auto" href="https://wa.me/244936777484?text=Ol%C3%A1%2C%20quero%20encomendar%20agora%20pelo%20site." rel="noopener noreferrer" target="_blank">Quero Encomendar Agora</a>
+<a class="btn btn-outline w-full sm:w-auto" href="https://wa.me/244936777484?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20os%20produtos." rel="noopener noreferrer" target="_blank">Estou com dúvidas</a>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="border-t border-zinc-900 bg-black/80 px-4 sm:px-6 md:px-14 py-8 md:py-10">
+<p class="text-center text-[11px] sm:text-xs text-zinc-600">
+        © <span id="year"></span> allô kapri — Melhor E-commerce Digital Angolano Em Construção.
+      </p>
+</footer>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+    .ak-toast-wrap{ position:fixed; right:16px; top:16px; z-index:10000 }
+    .ak-toast{ min-width:260px; margin-top:10px; padding:12px 14px; border-radius:12px;
+      background:#0b1020; color:#e5e7eb; border:1px solid rgba(249,107,9,.35);
+      box-shadow:0 10px 30px rgba(0,0,0,.45); font-size:14px; line-height:1.4; transition:.35s ease; }
+    .ak-toast.ok{ border-color: rgba(34,197,94,.45); }
+    .ak-toast.err{ border-color: rgba(239,68,68,.45); }
+  </style>
+<style>
+    /* Popup aesthetic and backdrop blur */
+    #ak-sub-overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:999999;
+      background: rgba(5,7,15,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    #ak-sub-card{ width:min(92vw, 560px); background:#0b1020; border:1px solid rgba(249,107,9,.35);
+      border-radius:18px; padding:22px 20px; box-shadow:0 20px 60px rgba(0,0,0,.55) }
+    .ak-sub-title{ margin:0 0 8px; color:#fff; font-weight:900; font-size:22px; letter-spacing:.3px }
+    .ak-sub-desc{ margin:0 0 16px; color:#cbd5e1; font-size:14px; line-height:1.55 }
+    .ak-sub-row{ display:flex; gap:10px; margin:8px 0; align-items:center }
+    .ak-inp{ flex:1; background:#0f172a; border:1px solid rgba(255,255,255,.15); border-radius:12px;
+      padding:12px 14px; color:#e5e7eb; outline:none }
+    .ak-btn{ background:#f96b09; color:#0b1020; font-weight:800; border:none; border-radius:12px; padding:12px 16px; cursor:pointer }
+    .ak-btn-sec{ background:transparent; color:#94a3b8; border:none; margin-top:8px; cursor:pointer; font-size:12px }
+    .ak-note{ font-size:11px; color:#94a3b8; margin-top:8px }
+    @media (max-width:520px){ .ak-sub-row{ flex-direction:column; } }
+    /* Toasts */
+    .ak-toast-wrap{ position:fixed; right:16px; top:16px; z-index:100000 }
+    .ak-toast{ min-width:260px; margin-top:10px; padding:12px 14px; border-radius:12px;
+      background:#0b1020; color:#e5e7eb; border:1px solid rgba(249,107,9,.35);
+      box-shadow:0 10px 30px rgba(0,0,0,.45); font-size:14px; line-height:1.4; transition:.35s ease; }
+    .ak-toast.ok{ border-color: rgba(34,197,94,.45); }
+    .ak-toast.err{ border-color: rgba(239,68,68,.45); }
+  </style>
+<!-- AK runtime config -->
+
+<script id="AK_POPUP_INIT_ONCE">
+(function(){
+  try{
+    if(!localStorage.getItem('AK_POPUP_MODE')){
+      localStorage.setItem('AK_POPUP_MODE','once');
+    }
+  }catch(e){}
+})();
+</script>
+
+<script>
+    window.AK_CONFIG = {
+      CATALOG_BASE_URL: localStorage.getItem('AK_CATALOG_BASE_URL') || 'http://127.0.0.1:5050',
+      CITY: localStorage.getItem('AK_CITY') || 'Luanda',
+      POPUP_MODE: (localStorage.getItem('AK_POPUP_MODE') || 'once').toLowerCase()
+    };
+  </script>
+<script>
+  (function(){
+    const API  = (window.AK_CONFIG?.CATALOG_BASE_URL || '').replace(/\/$/, '');
+    const MODE = 'once';
+
+    function showToast(msg, type='ok', ms=2800){
+      let wrap = document.querySelector('.ak-toast-wrap');
+      if(!wrap){ wrap = document.createElement('div'); wrap.className='ak-toast-wrap'; document.body.appendChild(wrap); }
+      const t = document.createElement('div');
+      t.className = 'ak-toast ' + (type==='err'?'err':'ok');
+      t.textContent = msg;
+      wrap.appendChild(t);
+      setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateY(-6px)'; }, ms);
+      setTimeout(()=>{ t.remove(); if(!wrap.children.length) wrap.remove(); }, ms+400);
+    }
+
+    function openOverlay(){ try{ localStorage.setItem('AK_SUBSCRIBED_OR_DISMISSED','1'); }catch(e){}
+      const ov = document.getElementById('ak-sub-overlay');
+      if(!ov) return;
+      ov.style.display='flex';
+      document.body.style.overflow='hidden';
+      const first = ov.querySelector('input[name=name]');
+      if(first) first.focus();
+    }
+    function closeOverlay(){
+      const ov = document.getElementById('ak-sub-overlay');
+      if(!ov) return;
+      ov.style.display='none';
+      document.body.style.overflow='';
+    }
+    function ensureOverlay(){
+      if(document.getElementById('ak-sub-overlay')) return;
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = `
+      <div id="ak-sub-overlay" role="dialog" aria-modal="true" aria-labelledby="ak-sub-title">
+        <div id="ak-sub-card">
+          <h3 id="ak-sub-title" class="ak-sub-title">Queremos avisar você primeiro!</h3>
+          <p class="ak-sub-desc">
+            Estamos <b>construindo o nosso website</b> com todo cuidado para te entregar a melhor experiência.
+            Por enquanto, você pode <b>consultar a Tabela de Preços</b> normalmente.
+            Deixe seus dados para receber <b>novidades</b>, <b>promoções exclusivas</b> e avisos de <b>entrega imediata em Luanda</b> assim que liberarmos as próximas funcionalidades.
+          </p>
+          <form id="ak-sub-form">
+            <div class="ak-sub-row">
+              <input class="ak-inp" type="text"  name="name"  placeholder="Seu nome" required autocomplete="name"/>
+              <input class="ak-inp" type="email" name="email" placeholder="Seu e-mail" required autocomplete="email"/>
+            </div>
+            <div class="ak-sub-row">
+              <input class="ak-inp" type="tel"  name="phone" placeholder="Telefone com DDD (opcional)" autocomplete="tel"/>
+            </div>
+            <div class="ak-sub-row" style="justify-content:flex-end">
+              <button type="submit" class="ak-btn">Quero receber novidades</button>
+            </div>
+            <div class="ak-note">Sem spam. Cancelar quando quiser.</div>
+          </form>
+          <button id="ak-sub-close" class="ak-btn-sec" aria-label="Fechar">Prefiro depois</button>
+        </div>
+      </div>`;
+      document.body.appendChild(wrapper.firstElementChild);
+
+      const ov   = document.getElementById('ak-sub-overlay');
+      const form = document.getElementById('ak-sub-form');
+      const cls  = document.getElementById('ak-sub-close');
+
+      cls.onclick = ()=>{ localStorage.setItem('AK_SUBSCRIBED_OR_DISMISSED','1'); closeOverlay(); };
+      ov.addEventListener('click', (e)=>{ if(e.target===ov){ localStorage.setItem('AK_SUBSCRIBED_OR_DISMISSED','1'); closeOverlay(); } });
+
+      form.addEventListener('submit', async (ev)=>{
+        ev.preventDefault();
+        const data = Object.fromEntries(new FormData(ev.target).entries());
+        try{
+          const rr = await fetch(API + '/api/subscribe', {
+            method:'POST', headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({ name: data.name, email: data.email, phone: data.phone })
+          });
+          if(rr.ok){
+            localStorage.setItem('AK_SUBSCRIBED_OR_DISMISSED','1');
+            showToast('Obrigado! Em breve você receberá as novidades da Allô Kapri.', 'ok');
+            closeOverlay();
+          } else {
+            showToast('Não foi possível enviar agora. Tente novamente em instantes.', 'err');
+          }
+        }catch(e){ showToast('Falha de conexão. Tente novamente.', 'err'); }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      ensureOverlay();
+      const key='AK_SUBSCRIBED_OR_DISMISSED';
+      const force=/[?&]sub=1\b/i.test(location.search);
+      const has=!!localStorage.getItem(key);
+      const mode=MODE;
+      console.warn('[AK POPUP]', {mode, force, has});
+
+      if (force || mode==='always' || (!has && mode==='once')) setTimeout(openOverlay, 450);
+
+      const btn = document.getElementById('link-catalogo');
+      if(btn){ btn.href = API + '/'; btn.removeAttribute('target'); }
+    });
+  })();
+  </script>
+<script>
+  (function(){
+    const API  = (window.AK_CONFIG?.CATALOG_BASE_URL || 'http://127.0.0.1:5050').replace(/\/$/, '');
+    const CITY = (window.AK_CONFIG?.CITY || 'Luanda');
+    async function fetchDisponiveis(){
+      try{
+        const r = await fetch(API + '/api/featured?market=AO&count=16&city=' + encodeURIComponent(CITY));
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        const data = await r.json();
+        return data.items || [];
+      }catch(e){ console.warn('disponiveis fetch failed', e); return []; }
+    }
+    function renderQuick(items){
+      const sec  = document.getElementById('ak-quick');
+      const rail = document.getElementById('ak-quick-rail');
+      if(!sec || !rail) return;
+      if(!items.length){ sec.style.display = 'none'; return; }
+      sec.style.display = 'block';
+      rail.innerHTML = '';
+      items.slice(0, 10).forEach(it=>{
+        const a = document.createElement('a');
+        a.href = API + '/';
+        a.className = 'ak-mini';
+        a.innerHTML = `<img src="${it.image}" alt="${it.model}">
+                       <div class="mname">${it.model}</div>
+                       <div class="mbadge">Entrega rápida — ${CITY}</div>`;
+        rail.appendChild(a);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      const items = await fetchDisponiveis();
+      renderQuick(items);
+      if(window.AK_bindQuickClicks) AK_bindQuickClicks(items);
+    });
+  })();
+  </script>
+</body></html>
